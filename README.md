@@ -1,4 +1,6 @@
-# app
+# Dart Live Reload on Docker using Denon with Conduit installed
+## How
+Just edit a *.dart file and press Ctrl+S, the program will reload automatically.
 
 ## Running the Application Locally
 
