@@ -1,0 +1,22 @@
+version: '3'
+services:
+
+  conduit:
+    image: dart
+    entrypoint: bash -c "if ! command -v deno &> /dev/null ; then dart pub global activate conduit; fi && if ! command -v deno &> /dev/null ; then curl -fsSL https://deno.land/x/install/install.sh | sh; fi && if ! command -v denon &> /dev/null ; then deno install -qAf --unstable https://deno.land/x/denon/denon.ts; fi && denon start"
+    tty: true
+    ports:
+      - 8888:8888
+      - 8181:8181
+    working_dir: /app
+    volumes:
+      - .:/app
+      - pub-cache:/root/.pub-cache
+      - deno:/root/.deno
+    environment:
+      - PATH=/usr/lib/dart/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.pub-cache/bin:/root/.deno/bin
+    restart: unless-stopped
+
+volumes:
+  pub-cache:
+  deno:
