@@ -1,7 +1,7 @@
 # Dart Live Reload on Docker using Denon with Conduit installed
 ## How
 I already made things simple, just double click on compose up.command (macOS) or compose up.bat (Windows), wait for pulling to complete.
-Edit a *.dart file and press Ctrl+S, the program will reload automatically, see the effects on Docker container logs.
+Edit a *.dart file and press Ctrl+S, the program will reload automatically, see the effects on Docker container logs, you can customise your own denon configuration in scripts.json
 
 ## Running the Application Locally
 
