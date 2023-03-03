@@ -3,7 +3,7 @@ services:
 
   conduit:
     image: dart
-    entrypoint: bash -c "if ! command -v conduit &> /dev/null ; then dart pub global activate conduit; fi && if ! command -v deno &> /dev/null ; then curl -fsSL https://deno.land/x/install/install.sh | sh; fi && if ! command -v denon &> /dev/null ; then deno install -qAf --unstable https://deno.land/x/denon/denon.ts; fi && denon start"
+    entrypoint: bash -c "dart pub get && if ! command -v conduit &> /dev/null ; then dart pub global activate conduit; fi && if ! command -v deno &> /dev/null ; then curl -fsSL https://deno.land/x/install/install.sh | sh; fi && if ! command -v denon &> /dev/null ; then deno install -qAf --unstable https://deno.land/x/denon/denon.ts; fi && denon start"
     tty: true
     ports:
       - 8888:8888
